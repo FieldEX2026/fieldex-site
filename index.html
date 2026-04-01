@@ -2,504 +2,148 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FieldEX | Experts in sports field solutions</title>
-  <meta
-    name="description"
-    content="FieldEX provides athletic field painting, logo painting, natural grass renovations, agronomic services, synthetic turf repairs, and online payments."
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FieldEx</title>
+
   <style>
-    :root{
-      --green:#2f4f2f;
-      --green-dark:#223a22;
-      --gold:#b08d2f;
-      --bg:#f6f6f2;
-      --text:#1f2937;
-      --muted:#5b6470;
-      --white:#ffffff;
-      --border:#dde3d8;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
+    * {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.5;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
     }
 
-    .container {
-      width: min(1120px, 92%);
-      margin: 0 auto;
+    body {
+      color: white;
     }
 
-    .topbar {
-      background: rgba(255,255,255,.95);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
+    header {
+      position: absolute;
       top: 0;
-      z-index: 20;
-      backdrop-filter: blur(8px);
-    }
-
-    .topbar-inner {
+      width: 100%;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      padding: 14px 0;
-      gap: 20px;
+      padding: 20px 40px;
+      z-index: 10;
     }
 
-    .brand img {
-      height: 48px;
-      width: auto;
-      display: block;
+    header h1 {
+      color: #d4af37;
     }
 
-    .nav {
-      display: flex;
-      gap: 22px;
-      flex-wrap: wrap;
-    }
-
-    .nav a {
-      color: var(--green-dark);
+    nav a {
+      margin-left: 20px;
       text-decoration: none;
-      font-weight: 700;
-      font-size: 15px;
-    }
-
-    .nav a:hover {
-      color: var(--gold);
+      color: white;
+      font-weight: 500;
     }
 
     .hero {
-      position: relative;
-      color: var(--white);
-      min-height: 560px;
+      height: 100vh;
+      background: url("hero.jpg") center/cover no-repeat;
       display: flex;
       align-items: center;
-      background:
-        linear-gradient(rgba(20,30,20,.55), rgba(20,30,20,.55)),
-        url(url("hero.jpg"))
-        center/cover no-repeat;
+      padding: 60px;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 30px;
-      align-items: center;
-      padding: 72px 0;
+    .overlay {
+      background: rgba(0,0,0,0.4);
+      padding: 40px;
+      max-width: 600px;
+      border-radius: 8px;
     }
 
-    .eyebrow {
-      display: inline-block;
-      background: rgba(255,255,255,.12);
-      border: 1px solid rgba(255,255,255,.25);
-      padding: 10px 16px;
-      border-radius: 999px;
-      font-size: 14px;
-      font-weight: 700;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      font-size: clamp(38px, 6vw, 64px);
-      line-height: 1.05;
-      margin: 0 0 18px;
-      letter-spacing: -.02em;
-    }
-
-    .hero p {
-      font-size: 18px;
-      max-width: 700px;
-      color: rgba(255,255,255,.92);
-      margin: 0 0 28px;
-    }
-
-    .cta-row {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
+    h2 {
+      font-size: 48px;
       margin-bottom: 20px;
     }
 
-    .btn {
+    p {
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .buttons a {
       display: inline-block;
-      padding: 14px 22px;
-      border-radius: 12px;
+      padding: 12px 20px;
+      margin-right: 10px;
+      border-radius: 5px;
       text-decoration: none;
-      font-weight: 700;
-      border: 2px solid transparent;
-      transition: .15s ease;
+      font-weight: bold;
     }
 
-    .btn-primary {
-      background: var(--gold);
-      color: #1f2a12;
+    .btn-yellow {
+      background: #d4af37;
+      color: black;
     }
 
-    .btn-primary:hover {
-      opacity: .92;
-      transform: translateY(-1px);
+    .btn-green {
+      background: #2e7d32;
+      color: white;
     }
 
-    .btn-secondary {
-      background: var(--green);
-      color: var(--white);
-    }
-
-    .btn-secondary:hover {
-      background: var(--green-dark);
-      transform: translateY(-1px);
-    }
-
-    .btn-outline {
-      border-color: rgba(255,255,255,.55);
-      color: var(--white);
-      background: transparent;
-    }
-
-    .btn-outline:hover {
-      background: rgba(255,255,255,.12);
-    }
-
-    .hero-card {
-      background: rgba(255,255,255,.10);
-      border: 1px solid rgba(255,255,255,.16);
-      border-radius: 22px;
-      padding: 24px;
-      backdrop-filter: blur(12px);
-    }
-
-    .hero-card h3 {
-      margin: 0 0 16px;
-      font-size: 24px;
-    }
-
-    .hero-points {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
-    .hero-points div {
-      background: rgba(255,255,255,.10);
-      border-radius: 14px;
-      padding: 14px;
-      font-weight: 700;
-      font-size: 14px;
-    }
-
-    section {
-      padding: 72px 0;
-    }
-
-    .section-title {
-      font-size: 34px;
-      margin: 0 0 12px;
-      color: var(--green-dark);
-      letter-spacing: -.02em;
-    }
-
-    .section-copy {
-      color: var(--muted);
-      font-size: 18px;
-      max-width: 760px;
-      margin: 0 0 30px;
-    }
-
-    .grid-4,
-    .grid-3,
-    .grid-2 {
-      display: grid;
-      gap: 22px;
-    }
-
-    .grid-4 { grid-template-columns: repeat(4, 1fr); }
-    .grid-3 { grid-template-columns: repeat(3, 1fr); }
-    .grid-2 { grid-template-columns: repeat(2, 1fr); }
-
-    .card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 24px;
-      box-shadow: 0 8px 20px rgba(0,0,0,.04);
-    }
-
-    .card h3 {
-      margin: 0 0 10px;
-      color: var(--green-dark);
-      font-size: 22px;
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .bullet-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-      margin-top: 22px;
-    }
-
-    .bullet {
-      background: #eef4ea;
-      border-radius: 14px;
-      padding: 14px 16px;
-      color: var(--green-dark);
-      font-weight: 700;
-    }
-
-    .about-wrap {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 26px;
-      align-items: start;
-    }
-
-    .band {
-      background: #eef4ea;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .contact-box {
-      background: var(--green-dark);
-      color: var(--white);
-      border-radius: 24px;
-      padding: 34px;
-    }
-
-    .contact-box h2 {
-      margin: 0 0 12px;
-      font-size: 34px;
-    }
-
-    .contact-box p {
-      margin: 0 0 22px;
-      color: rgba(255,255,255,.88);
-      font-size: 17px;
-    }
-
-    .contact-card {
-      background: var(--white);
-      color: var(--text);
-      border-radius: 18px;
-      padding: 24px;
-      margin-top: 18px;
-    }
-
-    .label {
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      color: var(--muted);
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-
-    .value {
-      font-size: 18px;
-      font-weight: 700;
-      margin-bottom: 18px;
-    }
-
-    footer {
-      padding: 24px 0 40px;
-      color: var(--muted);
+    .services {
+      background: white;
+      color: black;
+      padding: 60px;
       text-align: center;
-      font-size: 14px;
     }
 
-    @media (max-width: 980px) {
-      .hero-grid,
-      .grid-4,
-      .grid-3,
-      .grid-2,
-      .about-wrap,
-      .bullet-list {
-        grid-template-columns: 1fr;
-      }
+    .services h3 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
 
-      .nav {
-        display: none;
-      }
+    .services ul {
+      list-style: none;
+      margin-top: 20px;
+    }
 
-      .hero {
-        min-height: auto;
-      }
+    .services li {
+      margin: 10px 0;
+      font-size: 18px;
     }
   </style>
 </head>
+
 <body>
 
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <a class="brand" href="#top" aria-label="FieldEX home">
-        <img src="logo.png" alt="FieldEX logo" />
-      </a>
-      <nav class="nav">
-        <a href="#services">Services</a>
-        <a href="#why">Why FieldEX</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <a href="https://buy.stripe.com/bJe6oJ0DMbJ53G66Jj8AE00" target="_blank" rel="noreferrer">Pay Online</a>
-      </nav>
+<header>
+  <h1>FIELDEX</h1>
+  <nav>
+    <a href="#">Services</a>
+    <a href="#">Why FieldEx</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+    <a href="#">Pay Online</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="overlay">
+    <h2>Professional field services that show up sharp.</h2>
+    <p>
+      FieldEx delivers field painting, logo painting, natural grass renovation,
+      agronomic services, and synthetic turf repairs.
+    </p>
+
+    <div class="buttons">
+      <a href="#" class="btn-yellow">Pay Online</a>
+      <a href="#" class="btn-green">Request Service</a>
     </div>
-  </header>
+  </div>
+</section>
 
-  <main id="top">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Experts in sports field solutions</div>
-          <h1>Professional field services that show up sharp.</h1>
-          <p>
-            FieldEX delivers athletic field painting, logo painting, natural grass renovation,
-            agronomic services, synthetic turf repairs, and dependable support for schools,
-            clubs, colleges, and facilities.
-          </p>
-          <div class="cta-row">
-            <a class="btn btn-primary" href="https://buy.stripe.com/bJe6oJ0DMbJ53G66Jj8AE00" target="_blank" rel="noreferrer">Pay Online</a>
-            <a class="btn btn-secondary" href="mailto:sales@fieldex.us">Request Service</a>
-            <a class="btn btn-outline" href="#services">View Services</a>
-          </div>
-        </div>
+<section class="services">
+  <h3>Services</h3>
+  <ul>
+    <li>Field Painting</li>
+    <li>Logo Painting</li>
+    <li>Grass Renovation</li>
+    <li>Agronomic Services</li>
+    <li>Synthetic Turf Repairs</li>
+  </ul>
+</section>
 
-        <div class="hero-card">
-          <h3>Built for busy athletic facilities</h3>
-          <div class="hero-points">
-            <div>Field Painting</div>
-            <div>Logo Painting</div>
-            <div>Grass Renovation</div>
-            <div>Synthetic Turf Repairs</div>
-            <div>Agronomic Services</div>
-            <div>Online Payments</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="services" class="band">
-      <div class="container">
-        <h2 class="section-title">Services</h2>
-        <p class="section-copy">
-          Whether you need one-time event prep or ongoing field support, FieldEX provides
-          practical, professional solutions that improve appearance, playability, and reliability.
-        </p>
-
-        <div class="grid-4">
-          <div class="card">
-            <h3>Athletic Field Painting</h3>
-            <p>Crisp striping and layout services for football, soccer, baseball, lacrosse, and multi-use athletic facilities.</p>
-          </div>
-
-          <div class="card">
-            <h3>Logo Painting</h3>
-            <p>Custom field logos, midfield branding, end zones, and sponsor graphics that create a bold, professional look.</p>
-          </div>
-
-          <div class="card">
-            <h3>Natural Grass & Agronomic Services</h3>
-            <p>Renovation, remediation, fertilization, soil amendment, and field improvement work designed for safety and performance.</p>
-          </div>
-
-          <div class="card">
-            <h3>Synthetic Turf Repairs</h3>
-            <p>Professional repair work to keep synthetic playing surfaces clean, safe, and ready for use.</p>
-          </div>
-        </div>
-
-        <div class="card" style="margin-top:22px;">
-          <h3>Additional Expertise</h3>
-          <div class="bullet-list">
-            <div class="bullet">Aerifying</div>
-            <div class="bullet">Topdressing</div>
-            <div class="bullet">Fertilizing</div>
-            <div class="bullet">Soil Amendment</div>
-            <div class="bullet">Natural Grass Renovation</div>
-            <div class="bullet">Field Remediation</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="why">
-      <div class="container">
-        <h2 class="section-title">Why FieldEX</h2>
-        <p class="section-copy">
-          You need a partner who communicates clearly, shows up on time, and leaves your field looking ready for action.
-        </p>
-
-        <div class="grid-3">
-          <div class="card">
-            <h3>Professional Results</h3>
-            <p>Clean presentation, detail-focused work, and a strong standard for athletic facility appearance.</p>
-          </div>
-          <div class="card">
-            <h3>Reliable Scheduling</h3>
-            <p>Support for recurring maintenance, event prep, and fast-turn work when timelines matter.</p>
-          </div>
-          <div class="card">
-            <h3>Practical Experience</h3>
-            <p>Services built around real facility needs, field conditions, and performance expectations.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="band">
-      <div class="container about-wrap">
-        <div>
-          <h2 class="section-title">About FieldEX</h2>
-          <p class="section-copy" style="margin-bottom:0;">
-            FieldEX helps athletic programs and venues maintain high-performing, safe, and professional playing surfaces through dependable field preparation, natural grass renovation, agronomic services, and synthetic turf repairs.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Who we serve</h3>
-          <p>Schools, colleges, municipalities, private venues, clubs, and athletic programs that need clean, dependable field support.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container">
-        <div class="contact-box">
-          <h2>Let’s get your facility ready.</h2>
-          <p>
-            Reach out by email for service requests, quote inquiries, and approved invoice payments.
-          </p>
-
-          <div class="cta-row">
-            <a class="btn btn-primary" href="https://buy.stripe.com/bJe6oJ0DMbJ53G66Jj8AE00" target="_blank" rel="noreferrer">Pay Invoice Online</a>
-            <a class="btn btn-secondary" href="mailto:sales@fieldex.us">Request Service</a>
-          </div>
-
-          <div class="contact-card">
-            <div class="label">Email</div>
-            <div class="value">sales@fieldex.us</div>
-
-            <div class="label">Service Area</div>
-            <div class="value">Bay Area and surrounding communities</div>
-
-            <div class="label">Payments</div>
-            <div class="value">We accept online payments for approved invoices and services.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    © 2026 FieldEX. All rights reserved.
-  </footer>
 </body>
 </html>
