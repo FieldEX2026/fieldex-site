@@ -26,17 +26,19 @@
     }
 
     header {
-      position: absolute;
+      position: fixed;
       top: 0;
+      left: 0;
       width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 40px;
-      z-index: 10;
-      background: rgba(255, 255, 255, 0.72);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
+      padding: 18px 36px;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
     }
 
     .logo {
@@ -49,7 +51,7 @@
     nav {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       flex-wrap: wrap;
     }
 
@@ -58,7 +60,7 @@
       color: #111;
       font-weight: 600;
       padding: 8px 14px;
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.9);
       border-radius: 6px;
       transition: all 0.2s ease;
       font-size: 14px;
@@ -71,18 +73,21 @@
 
     .hero {
       min-height: 100vh;
-      background: url("hero.jpeg") center/cover no-repeat;
       display: flex;
       align-items: center;
       padding: 120px 60px 60px;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.28)),
+        url("hero.jpeg") center center / cover no-repeat;
     }
 
     .overlay {
-      background: rgba(0, 0, 0, 0.45);
+      background: rgba(0, 0, 0, 0.48);
       padding: 40px;
-      max-width: 560px;
+      max-width: 620px;
       border-radius: 10px;
       color: white;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
     }
 
     .eyebrow {
@@ -91,7 +96,7 @@
       font-weight: 700;
       margin-bottom: 12px;
       color: #f2f2f2;
-      background: rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.16);
       padding: 8px 12px;
       border-radius: 999px;
     }
@@ -289,6 +294,7 @@
       border-radius: 12px;
       padding: 24px;
       margin-top: 22px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.04);
     }
 
     .contact-label {
@@ -353,6 +359,7 @@
 
       .hero {
         padding: 150px 20px 50px;
+        min-height: 86vh;
       }
 
       .overlay {
